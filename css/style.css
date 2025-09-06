@@ -44,11 +44,11 @@ body {
     url("../images/hero.png") center/cover no-repeat;
   color: var(--text-light);
   text-align: center;
-  padding: 10rem 2rem;
+  padding: 8rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 5vh;
+  min-height: 70vh;
 }
 
 .hero-content h1 {
@@ -79,7 +79,7 @@ body {
 }
 
 .btn:hover {
-  background-color: #ffb833; /* Lighter shade of orange */
+  background-color: #ffb833;
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
@@ -114,8 +114,10 @@ body {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 1.5rem; /* space between images */
+  /* --- ΑΛΛΑΓΗ ΕΔΩ --- */
+  /* Δημιουργεί 2 στήλες σε μεγάλες οθόνες */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
 .service-card {
@@ -140,6 +142,7 @@ body {
 .service-card ul {
   list-style: none;
   padding: 0;
+  text-align: left;
 }
 
 .service-card ul li {
@@ -159,8 +162,10 @@ body {
 /* GALLERY */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 1.5rem; /* space between images */
+  /* --- ΑΛΛΑΓΗ ΕΔΩ --- */
+  /* Δημιουργεί 2 στήλες σε μεγάλες οθόνες */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
 .gallery-item img {
@@ -206,8 +211,16 @@ body {
 .contact-card h3 {
   font-family: "Poppins", sans-serif;
   font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   color: var(--secondary-color);
+}
+
+.contact-card h4 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #e9ecef;
 }
 
 .social-btn {
@@ -270,7 +283,7 @@ footer {
   }
 }
 
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE DESIGN - MOBILE FIXES */
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2.5rem;
@@ -279,6 +292,13 @@ footer {
     font-size: 2.2rem;
   }
   .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- ΑΛΛΑΓΗ ΕΔΩ --- */
+  /* Εξασφαλίζει μία στήλη σε κινητά */
+  .services-grid,
+  .gallery {
     grid-template-columns: 1fr;
   }
 }
