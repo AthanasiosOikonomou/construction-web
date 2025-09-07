@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #005a9c; /* A strong, professional blue */
-  --secondary-color: #f7a400; /* A vibrant accent orange */
+  --primary-color: #005a9c;
+  --secondary-color: #f7a400;
   --background-light: #f8f9fa;
   --background-dark: #343a40;
   --text-dark: #212529;
@@ -114,7 +114,6 @@ body {
 
 .services-grid {
   display: grid;
-  /* Δημιουργεί 2 στήλες σε μεγάλες οθόνες */
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
@@ -157,8 +156,6 @@ body {
   left: 0;
   font-weight: bold;
 }
-
-/* ===== Replaced old .gallery rules with Swiper-friendly styles ===== */
 
 /* Swiper container spacing */
 .swiper {
@@ -315,7 +312,6 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  /* Εξασφαλίζει μία στήλη σε κινητά για services (gallery removed) */
   .services-grid {
     grid-template-columns: 1fr;
   }
