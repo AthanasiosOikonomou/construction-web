@@ -10,6 +10,14 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Swiper CSS: keep before your stylesheet so you can override if needed -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Your stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -79,38 +87,66 @@
 
     <section class="container">
       <h2 class="section-title">Δουλειές που ξεχωρίζουν</h2>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="images/before.jpeg" alt="Πριν" />
-        </div>
-        <div class="gallery-item">
-          <img src="images/After.jpeg" alt="Μετά" />
-        </div>
-        <div class="gallery-item">
-          <img
-            src="images/Color plus lights.jpeg"
-            alt="Ηλεκτρολογικές εγκαταστάσεις και Βαψίματα"
-          />
-        </div>
-        <div class="gallery-item">
-          <img src="images/Kitchen.jpg" alt="Κουζίνα" />
+
+      <!-- Swiper -->
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/before.jpeg" alt="Πριν" loading="lazy" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/After.jpeg" alt="Μετά" loading="lazy" />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="images/Color plus lights.jpeg"
+              alt="Ηλεκτρολογικές εγκαταστάσεις και Βαψίματα"
+              loading="lazy"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/Kitchen.jpg" alt="Κουζίνα" loading="lazy" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/led.jpg" alt="Led" loading="lazy" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/Led2.jpg" alt="Led 2" loading="lazy" />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="images/Pinakas.jpg"
+              alt="Ηλεκτρολογικός Πίνακας"
+              loading="lazy"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/pool.jpg" alt="Πισίνα" loading="lazy" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/Bathroom.jpg" alt="Μπάνιο" loading="lazy" />
+          </div>
+
+          <div class="swiper-slide">
+            <img src="images/Bathroom 2.jpg" alt="Μπάνιο 2" loading="lazy" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/Bathroom 3.jpg" alt="Μπάνιο 3" loading="lazy" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/Living room 2.jpg" alt="Σαλόνι 2" loading="lazy" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/Living room 3.jpg" alt="Σαλόνι 3" loading="lazy" />
+          </div>
         </div>
 
-        <div class="gallery-item">
-          <img src="images/led.jpg" alt="Led" />
-        </div>
-        <div class="gallery-item">
-          <img src="images/Led2.jpg" alt="Led 2" />
-        </div>
-        <div class="gallery-item">
-          <img src="images/Pinakas.jpg" alt="Ηλεκτρολογικός Πίνακας" />
-        </div>
-        <div class="gallery-item">
-          <img src="images/pool.jpg" alt="Πισίνα" />
-        </div>
-        <div class="gallery-item">
-          <img src="images/Bathroom.jpg" alt="Μπάνιο" />
-        </div>
+        <!-- Pagination dots -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Navigation arrows -->
+        <div class="swiper-button-prev" aria-label="Προηγούμενο"></div>
+        <div class="swiper-button-next" aria-label="Επόμενο"></div>
       </div>
     </section>
 
@@ -151,6 +187,38 @@
       </div>
     </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Carousel init (only carousel-related JS changed) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const swiper = new Swiper(".swiper", {
+          loop: true,
+          spaceBetween: 20,
+          slidesPerView: 1,
+          centeredSlides: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          breakpoints: {
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          },
+        });
+      });
+    </script>
+
+    <!-- your main JS (unchanged) -->
     <script src="js/main.js"></script>
   </body>
 </html>

@@ -114,7 +114,6 @@ body {
 
 .services-grid {
   display: grid;
-  /* --- ΑΛΛΑΓΗ ΕΔΩ --- */
   /* Δημιουργεί 2 στήλες σε μεγάλες οθόνες */
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
@@ -159,27 +158,48 @@ body {
   font-weight: bold;
 }
 
-/* GALLERY */
-.gallery {
-  display: grid;
-  /* --- ΑΛΛΑΓΗ ΕΔΩ --- */
-  /* Δημιουργεί 2 στήλες σε μεγάλες οθόνες */
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+/* ===== Replaced old .gallery rules with Swiper-friendly styles ===== */
+
+/* Swiper container spacing */
+.swiper {
+  padding: 1rem 0 2.5rem;
 }
 
-.gallery-item img {
+/* center slides vertically */
+.swiper-wrapper {
+  align-items: center;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* uniform image size for a stable layout */
+.swiper-slide img {
   width: 100%;
-  height: 100%;
+  height: 280px;
   object-fit: cover;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   transition: var(--transition);
 }
 
-.gallery-item img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
+.swiper-slide img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+/* navigation & pagination colors matched to theme */
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--primary-color);
+}
+
+.swiper-pagination-bullet {
+  background: var(--secondary-color);
+  opacity: 0.9;
 }
 
 /* CONTACT */
@@ -295,10 +315,20 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  /* --- ΑΛΛΑΓΗ ΕΔΩ --- */
-  /* Εξασφαλίζει μία στήλη σε κινητά */
-  .services-grid,
-  .gallery {
+  /* Εξασφαλίζει μία στήλη σε κινητά για services (gallery removed) */
+  .services-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Larger screens: slightly larger carousel images */
+@media (min-width: 768px) {
+  .swiper-slide img {
+    height: 320px;
+  }
+}
+@media (min-width: 1024px) {
+  .swiper-slide img {
+    height: 380px;
   }
 }
